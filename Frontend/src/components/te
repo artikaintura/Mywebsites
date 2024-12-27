@@ -1,0 +1,9 @@
+
+             // action='https://getform.io/f/bvrerzwb    {errors.name && <span className='text-red-600'>This Field is required</span>}
+           
+              //method='POST onSubmit={handleSubmit(onSubmit)}'
+              
+              w-full p-6 md:p-4 grid grid-cols-1 md:grid-cols-2 gap-3
+
+              <div className="grid gap-9  p-6 md:p-10 md:grid-cols-2">
+              flex justify-center md:justify-start md:col-span-2
