@@ -18,6 +18,19 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setError('Please fill in all fields.');
+      setStatus('');
+      return;
+    }
+
+      // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    setError('Please enter a valid email address.');
+    setStatus('');
+    return;
+  }
     const API_BASE_URL = process.env.REACT_APP_API_URL;
     
     try {
@@ -25,8 +38,9 @@ function Contact() {
       if (response.status === 200) {
         setStatus('Message sent successfully!');
         setError('');
+        setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        setStatus('Failed to send message.');
+        setStatus('');
         setError('Failed to send message.')
       }
     } catch (error) {
