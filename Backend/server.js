@@ -17,8 +17,9 @@ if (process.env.NODE_ENV === 'production') {
 
 // Middleware
 app.use(cors({
-  origin:['http://localhost:3000'],
-  methods:['GET','POST'],
+  origin: 'https://mywebsites-three.vercel.app/', // Your frontend URL
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type, Authorization'
 })); // Enable Cross-Origin Resource Sharing
 app.use(bodyParser.json()); // Parse incoming JSON requests
 
